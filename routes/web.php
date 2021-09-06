@@ -15,4 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('layout.app');
-});
+})->name('home');
+
+Route::get('/comics', function () {
+    $data=[
+        'fumetti'=>config('comics')
+    ];
+    return view('comics',$data);
+})->name('comics');
